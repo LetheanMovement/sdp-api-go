@@ -1,0 +1,43 @@
+openapi: 3.0.0
+info:
+  contact:
+    email: contact@lethean.io
+    name: Lethean VPN
+    url: https://lt.hn
+  description: Functionality to simplify using LTHN
+  license:
+    name: GPLv3
+    url: https://gitlab.com/lthn.io/projects/vpn/market-api/LICENCE
+  title: Lethean Binary API
+  version: 1.2.2
+servers:
+- url: /
+paths:
+  /letheand/start:
+    get:
+      operationId: startLetheand
+      parameters:
+      - allowEmptyValue: true
+        description: Returns the binary version
+        explode: true
+        in: query
+        name: version
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - allowEmptyValue: false
+        description: Returns the binary version
+        explode: true
+        in: query
+        name: data_dir
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200": {}
+      tags:
+      - vpn
+components:
+  schemas: {}
